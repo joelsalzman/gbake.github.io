@@ -38,7 +38,7 @@
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <!-- <script src="./static/js/index.js"></script> -->
 </head>
 <body>
 <!-- 
@@ -92,11 +92,11 @@
           <h1 class="publication-venue" style="font-size:1.5rem; margin: 0 auto;">SIGGRAPH 2025 Posters</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/stephenspasch/">Stephen Pasch</a><sup>*</sup>,</span>
+              <a href="https://github.com/ChefSteveP">Stephen Pasch</a><sup>*1</sup>,</span>
             <span class="author-block">
-              <a href="https://joelsalzman.github.io">Joel Salzman</a><sup>*</sup>,</span>
+              <a href="https://joelsalzman.github.io">Joel Salzman</a><sup>*1,2</sup>,</span>
             <span class="author-block">
-              <a href="https://www.cs.columbia.edu/~cxz/index.htm">Changxi Zheng</a>
+              <a href="https://www.cs.columbia.edu/~cxz/index.htm">Changxi Zheng</a><sup>1</sup>
             </span>
           </div>
 
@@ -104,7 +104,8 @@
             <span class="author-block">* denotes co-first authors</span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Columbia University</span>
+            <span class="author-block"><sup>1</sup>Columbia University,</span>
+            <span class="author-block"><sup>2</sup>Brown University</span>
           </div>
 
           <div class="column has-text-centered">
@@ -160,7 +161,7 @@
             </div>
 
           </div>
-          <div style="margin: 2rem 0;">
+          <div>
             <img src="./static/figures/gbake_rep_image.jpg" alt="GBake representative image" style="width: 100%; height: auto; max-width: 800px;">
             <h2 class="subtitle has-text-centered">
               <span class="dnerf">GBAKE</span> bakes reflection probes from scenes made of 3D Gaussian particles.
@@ -171,64 +172,6 @@
     </div>
   </div>
 </section>
-
-
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 
 <section class="section">
@@ -268,18 +211,70 @@
   </div>
 </section>
 
-<!-- 
+
+<section class="section" style="display:none">
+  <div class="container is-max-desktop">
+
+    <!-- Method. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+
+        <!-- Light Probe Baking. -->
+        <h3 class="title is-4">Light Probe Baking Process</h3>
+        <div class="content has-text-justified">
+          <p>
+            GBake works by sampling the Gaussian-splatted scene from multiple viewpoints to create
+            environment maps. These are then processed into reflection probes compatible with Unity's
+            lighting system.
+          </p>
+        </div>
+        <!--/ Light Probe Baking. -->
+
+        <!-- Re-rendering. -->
+        <!-- <h3 class="title is-4">Integration Results</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">GBake</span>, you can seamlessly integrate traditional 3D meshes
+            into Gaussian-splatted scenes with proper reflections and lighting that match the environment.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <div class="placeholder-video" style="width: 75%; margin: 0 auto;">
+            Integration Results Video
+          </div>
+        </div> -->
+        <!--/ Re-rendering. -->
+
+        <!-- Splatting vs Raytracing. -->
+        <h3 class="title is-4">Splatting vs Raytracing</h3>
+        <div class="content has-text-justified">
+          <p>
+            GBake works by sampling the Gaussian-splatted scene from multiple viewpoints to create
+            environment maps. These are then processed into reflection probes compatible with Unity's
+            lighting system.
+          </p>
+        </div>
+        <!-- Splatting vs Raytracing. -->
+
+      </div>
+    </div>
+    <!--/ Method. -->
+
+  </section>
+
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+    <pre><code>@article{paschsalzman2025gbake,
+      author    = {Pasch, Stephen and Salzman, Joel and Zheng, Changxi},
+      title     = {GBake: Baking 3D Gaussian Splats},
+      journal   = {arXiv preprint arXiv:2507.02257},
+      year      = {2025},
+    }</code></pre>
   </div>
-</section> -->
+</section>
 
 
 <footer class="footer">
@@ -297,7 +292,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            We thank the authors of <a href="https://nerfies.github.io/">Nerfies</a>, who kindly open sourced the template of this website.
+            We thank the authors of <a href="https://nerfies.github.io/">Nerfies</a>, who kindly open sourced the template of their website, which we borrow.
           </p>
         </div>
       </div>
